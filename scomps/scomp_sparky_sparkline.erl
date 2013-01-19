@@ -28,9 +28,16 @@
 vary(_Params, _Context) -> 
 	default.
 
-render(Params, Vars, _Context) ->
-	?DEBUG({Params, Vars}),
-
+% @doc Render the sparcline. 
+%
+% Possible params:
+%   points: A list with numbers
+%   preset: The rendering preset to use. Sparky has some default ones.
+%      "hilite-last", "hilite-peaks", "gray-area", "zero-bars" and "binary".
+%       It is also possible to define your own presets.. See: lib/js/presets
+%   label: Optional label to display. Normally the label is displayed after
+%       sparkline, except for hilite-peak.
+render(Params, _Vars, _Context) ->
 	Points = proplists:get_value(points, Params, []),
 	Preset = proplists:get_value(preset, Params, "default"),
 	DataPoints = string:join([z_convert:to_list(P) || P <- Points], ","),
