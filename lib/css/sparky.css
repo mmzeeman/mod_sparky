@@ -1,0 +1,24 @@
+
+span.sparkline {
+	display: inline-block;
+	width: 5em;
+	height: 1em;
+	margin: 0 .2em;
+	vartical-align: baseline;
+}
+
+var.sparkline-first, 
+var.sparkline-last {
+	color: red;
+	margin: 0 .2em;
+}
+
+var.sparkline-min,
+var.sparkline-max {
+	color: cadetblue;
+	margin: 0 .2em;
+}
+
+label.sparkline-label {
+	display: inline-block;
+}
